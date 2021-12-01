@@ -1,0 +1,86 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        applicationId "io.github.livenlearnaday.adddeletetextfromlist"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation "androidx.core:core-ktx:$androidxCoreKtxVersion"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation "androidx.annotation:annotation:$annotationVersion"
+
+
+//lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleViewmodel"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleLivedata"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleCommon"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleRuntime"
+
+
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
+    implementation "com.google.android.material:material:$androidMaterialVersion"
+    implementation "androidx.activity:activity-ktx:$activityKtxVersion"
+
+    implementation 'androidx.arch.core:core-runtime:2.1.0'
+
+
+    //Timber logging
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+
+    //testing
+
+    implementation "androidx.arch.core:core-testing:$coreTestingVersion"
+    testImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
+
+    androidTestImplementation "androidx.test.ext:junit-ktx:$androidXJunitVersion"
+    androidTestImplementation "org.assertj:assertj-core:$assertjVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidXJunitVersion"
+
+    testImplementation "junit:junit:$junitTestingVersion"
+
+    testImplementation "io.mockk:mockk:$mockkVersion"
+    debugImplementation "androidx.fragment:fragment-testing:$fragmentTestingVersion"
+
+
+
+}
+
+kapt {
+    correctErrorTypes true
+}
