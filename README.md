@@ -1,6 +1,6 @@
 # AddDeleteTextFromList
 
-A very simple android application with a single activity that a user can add text(s) to a list and select the text(S) and delete it/them.
+A very simple android application with a single activity that a user can add text(s) to a list and select the text item(s) to delete.
 
 
 ### App architecture
